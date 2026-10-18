@@ -1,0 +1,114 @@
+/* EuroBud: "Das ist EuroBud" -- left overview, right three-step process. */
+.about-section { background:#222626; padding:88px 0 92px; }
+.about-section .about-grid-refined {
+  display:grid;
+  grid-template-columns:minmax(0, .90fr) minmax(0, 1.10fr);
+  align-items:center;
+  gap:clamp(36px, 6vw, 94px);
+}
+.about-section .about-copy { grid-column:1; grid-row:1; max-width:515px; min-width:0; }
+.about-section .about-copy > .eyebrow { color:#f35159; font-weight:700; letter-spacing:.19em; }
+.about-section .about-copy h2 {
+  margin:18px 0 0;
+  font-size:clamp(38px, 4vw, 58px);
+  line-height:1.075;
+  letter-spacing:-.03em;
+  color:#fff;
+}
+.about-section .about-heading-rule {
+  display:block;
+  background:#ed1727;
+  width:58px; height:3px;
+  margin-top:25px;
+}
+.about-section .about-copy > p:not(.eyebrow) {
+  font-size:15px;
+  line-height:1.85;
+  margin-top:25px;
+  color:#cbd0d0;
+  max-width:455px;
+}
+.about-section .about-copy .check-list { margin:24px 0 31px; }
+.about-section .about-copy .check-list li { color:#f1f2f1; font-size:13px; line-height:1.55; margin:13px 0; }
+.about-section .about-copy .check-list .icon { flex:0 0 20px; width:20px; height:20px; }
+.about-section .about-copy .button-outline {
+  border-color:rgba(255,255,255,.52);
+  color:#fff;
+  min-height:50px;
+  padding:14px 21px;
+}
+.about-section .about-copy .button-outline:hover { border-color:#ed1727; }
+.about-section .about-process-panel-refined {
+  grid-column:2;
+  grid-row:1;
+  min-width:0;
+  width:100%;
+  background:transparent;
+  border:0;
+  box-shadow:none;
+  padding:0;
+}
+.about-section .about-process-intro { padding:0 0 24px; }
+.about-section .about-process-steps { display:flex; flex-direction:column; gap:20px; }
+.about-section .about-process-eyebrow {
+  margin:0 0 9px;
+  color:#ef4754;
+  text-transform:uppercase;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.17em;
+}
+.about-section .about-process-intro h3 {
+  color:#fff;
+  margin:0;
+  font-size:clamp(23px, 2.2vw, 29px);
+  letter-spacing:-.025em;
+  line-height:1.22;
+}
+.about-section .about-process-panel-refined .about-process-item {
+  display:grid;
+  grid-template-columns:42px minmax(0,1fr);
+  gap:22px;
+  padding:8px 0;
+  border:0;
+}
+.about-section .about-process-panel-refined .about-process-number {
+  font-size:21px;
+  line-height:1.25;
+  color:#f02a3b;
+}
+.about-section .about-process-panel-refined .about-process-content h3 {
+  font-size:20px;
+  line-height:1.25;
+  font-weight:600;
+  margin:0 0 10px;
+  color:#fff;
+}
+.about-section .about-process-panel-refined .about-process-content p {
+  margin:0;
+  font-size:13px;
+  line-height:1.75;
+  color:#bdc4c8;
+}
+@media (max-width:900px) {
+  .about-section .about-grid-refined { gap:33px; }
+  .about-section .about-process-panel-refined { padding:0; }
+  .about-section .about-process-panel-refined .about-process-item { gap:15px; grid-template-columns:32px minmax(0,1fr); padding:8px 0; }
+  .about-section .about-process-panel-refined .about-process-content h3 { font-size:17px; }
+  .about-section .about-process-panel-refined .about-process-content p { font-size:12px; }
+  .about-section .about-copy h2 { font-size:clamp(34px, 4.3vw, 48px); }
+}
+@media (max-width:760px) {
+  .about-section { padding:51px 0 56px; }
+  .about-section .about-grid-refined { display:flex; flex-direction:column; align-items:stretch; gap:34px; }
+  .about-section .about-copy { max-width:none; width:100%; }
+  .about-section .about-copy h2 { font-size:clamp(38px, 9vw, 49px); }
+  .about-section .about-copy > p:not(.eyebrow) { font-size:13px; max-width:520px; }
+  .about-section .about-process-panel-refined { width:100%; padding:0; }
+  .about-section .about-process-panel-refined .about-process-item { grid-template-columns:31px minmax(0,1fr); padding:8px 0; }
+}
+@media (max-width:390px) {
+  .about-section .about-process-panel-refined { padding:0; }
+  .about-section .about-process-panel-refined .about-process-item { gap:10px; }
+  .about-section .about-copy h2 { font-size:36px; }
+}

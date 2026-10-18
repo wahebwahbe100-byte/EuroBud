@@ -1,0 +1,75 @@
+/* Only the four inner-page hero areas: image and section height follow the copy.
+   Original images, page layout, and homepage slider are not changed. */
+.subhero.subhero-compact {
+  min-height: 0;
+  height: auto;
+  padding: 26px 0 30px;
+  align-items: center;
+}
+.subhero.subhero-compact .breadcrumb {
+  margin-bottom: 17px;
+}
+.subhero.subhero-compact .eyebrow {
+  margin-bottom: 10px;
+}
+.subhero.subhero-compact h1 {
+  font-size: clamp(36px, 3.65vw, 52px);
+  line-height: 1.07;
+}
+.subhero.subhero-compact .subhero-copy > p:last-child {
+  margin-top: 13px;
+  font-size: 14px;
+  line-height: 1.62;
+  max-width: 530px;
+}
+.services-intro.services-intro-compact {
+  min-height: 0;
+  height: auto;
+  padding: 25px 0 29px;
+}
+.services-intro.services-intro-compact .breadcrumb {
+  margin-bottom: 17px;
+}
+.services-intro.services-intro-compact .services-intro-copy .eyebrow {
+  margin-bottom: 11px;
+}
+.services-intro.services-intro-compact .services-intro-copy h1 {
+  font-size: clamp(36px, 3.65vw, 52px);
+  line-height: 1.08;
+}
+.services-intro.services-intro-compact .services-intro-copy > p:last-child {
+  margin-top: 13px;
+  font-size: 14px;
+  line-height: 1.65;
+  max-width: 510px;
+}
+@media (max-width: 760px) {
+  .subhero.subhero-compact {
+    min-height: 0;
+    padding: 22px 0 27px;
+  }
+  .subhero.subhero-compact .breadcrumb,
+  .services-intro.services-intro-compact .breadcrumb {
+    margin-bottom: 13px;
+  }
+  .subhero.subhero-compact .eyebrow,
+  .services-intro.services-intro-compact .services-intro-copy .eyebrow {
+    margin-bottom: 9px;
+  }
+  .subhero.subhero-compact h1,
+  .services-intro.services-intro-compact .services-intro-copy h1 {
+    font-size: clamp(30px, 8.15vw, 40px);
+    line-height: 1.09;
+  }
+  .subhero.subhero-compact .subhero-copy > p:last-child,
+  .services-intro.services-intro-compact .services-intro-copy > p:last-child {
+    margin-top: 11px;
+    font-size: 12px;
+    line-height: 1.62;
+    max-width: 420px;
+  }
+  .services-intro.services-intro-compact {
+    min-height: 0;
+    padding: 21px 0 26px;
+  }
+}
