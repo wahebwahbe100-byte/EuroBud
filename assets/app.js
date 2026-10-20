@@ -126,8 +126,8 @@
         'Mein Vorhaben:', details, '', 'Ich freue mich auf Ihre Rückmeldung.'
       ].filter((line, index, list) => line !== '' || (index > 0 && list[index - 1] !== '')).join('\n');
       const subject = `Projektanfrage${service ? ' – ' + service : ''} – ${name}`;
-      result.querySelector('.email-draft').href = `mailto:zywickisebastian4@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
-      result.querySelector('.whatsapp-draft').href = `https://wa.me/4915212072198?text=${encodeURIComponent(message)}`;
+      result.querySelector('.email-draft').href = `mailto:Eurobau.handwerker@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+      result.querySelector('.whatsapp-draft').href = `https://wa.me/4917640713493?text=${encodeURIComponent(message)}`;
       result.hidden = false;
       result.focus({ preventScroll: true });
       result.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'nearest' });
