@@ -32,3 +32,8 @@
 
 مرجع أسلوب الخدمات والحركة:
 https://babinbau.de/leistungen/
+
+إضافة جديدة:
+- صورة سيارتي Ford Transit ضمن قسم سيارات العمل في الصفحة الرئيسية وصفحة «من نحن».
+- ملف الصورة داخل assets/ford-transit-einsatzfahrzeuge.webp والتنسيق في assets/fleet.css.
+- ملاحظة: الكتابة على السيارتين في الصورة هي EURO BAU، بينما اسم الموقع EuroBud؛ تأكد من هوية العلامة قبل النشر.
