@@ -306,3 +306,37 @@
   }
   .project-grid.project-grid-full .project-info > .icon { width: 12px; height: 12px; }
 }
+
+
+/* Mobile navigation fix: keep the header and its full-height menu attached to
+   the viewport, even when the page is scrolled to the bottom and body scroll
+   is locked. This prevents the sticky header from losing its scroll context. */
+@media (max-width: 860px) {
+  body { padding-top: var(--header); }
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 200;
+  }
+  .mobile-nav {
+    position: fixed;
+    top: var(--header);
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    background: #fff;
+  }
+  .mobile-nav .container {
+    padding-bottom: calc(40px + env(safe-area-inset-bottom, 0px));
+  }
+}
