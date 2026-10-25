@@ -1,10 +1,10 @@
-# EuroBud – Renovierung & Bau
+# EuroBau – Renovierung & Bau
 
 Responsive German business website built from the supplied design reference.
 
 ## Contents
 
-The `dist/` directory is the complete uploadable website: 5 main pages, 6 service detail pages, Impressum, privacy notes and a 404 page. All images and fonts are local. HTML pages contain their full content without JavaScript. The project gallery includes 24 original listing photos, including garden maintenance, construction details and supplied before/after collages.
+The `dist/` directory is the complete uploadable website: 5 main pages, 6 service detail pages, Impressum, privacy notes and a 404 page. All images and fonts are local. HTML pages contain their full content without JavaScript. The project gallery includes 26 photos, including garden maintenance, construction details and supplied before/after collages. The Projekte page also includes two locally hosted MP4 project videos, with WebP previews and native playback controls.
 
 Regenerate HTML after editing templates with `python build.py`. Shared presentation and interactions live in `dist/assets/style.css` and `dist/assets/app.js`.
 
@@ -12,11 +12,11 @@ The services overview uses six alternating image/text sections inspired by the p
 
 The homepage now opens with a three-slide photographic hero for renovation, bathrooms/tiles, and painting/flooring. Each slide has its own project inquiry link. `hero.js` and `hero.css` provide crossfades, numbered slide indicators, previous/next controls, pause/resume, keyboard navigation and touch swipes. Autoplay pauses outside the viewport, in a hidden tab, during hover and keyboard interaction. Reduced-motion starts paused. Without JavaScript the first slide and its inquiry link remain available.
 
-The homepage also includes the four-part benefits strip, a four-column “Warum EuroBud?” section, four expandable frequently asked questions, and a red project inquiry banner based on the supplied screenshots. Their layout is in `sections.css`. The questions use native `details`/`summary` controls, so they work with keyboard input and without JavaScript. A floating WhatsApp link opens the business number on every page.
+The homepage also includes the four-part benefits strip, a four-column “Warum EuroBau?” section, four expandable frequently asked questions, and a blue project inquiry banner based on the supplied screenshots. Their layout is in `sections.css`. The questions use native `details`/`summary` controls, so they work with keyboard input and without JavaScript. A floating WhatsApp link in its original green opens the business number on every page.
 
 ## Contact flow
 
-The form validates its fields and prepares an email or WhatsApp message. It does **not** send messages itself or claim successful delivery. Visitors explicitly open a chosen messaging application and send there. Contact details are from the public EuroBud listing.
+The form validates its fields and prepares an email or WhatsApp message. It does **not** send messages itself or claim successful delivery. Visitors explicitly open a chosen messaging application and send there. Contact details are from the public EuroBau listing.
 
 ## Before using a public business domain
 
@@ -45,8 +45,8 @@ Additional original image URLs are recorded in `asset-sources.json`. Images that
 
 Decorative hero photograph (not a business reference): https://images.unsplash.com/photo-1600607687920-4e2a09cf159d
 
-Fonts: Barlow and Inter, self-hosted from Google Fonts. Logo redrawn as SVG from the supplied reference.
+Fonts: Barlow and Inter, self-hosted from Google Fonts. Header, footer and favicon use the supplied blue Hausmeister PNG unchanged. Header and footer display the responsive EuroBau wordmark below the symbol. The shared palette in assets/style.css is coordinated with its blue (#0076d5), navy and pale blue surfaces.
 
 ## Verification
 
-The build is checked for HTML structure, unique IDs, local asset/link targets, navigation and JavaScript syntax. Browser QA is unavailable in the current environment because the required control-browser skill is not present.
+The updated archive was checked for unique IDs, local assets, link targets, shared color variables, JavaScript syntax and readable solid-color text combinations. Display branding and the contact greeting use EuroBau. Contact destinations, interactions, project photos and fonts are unchanged. The supplied logo is preserved byte-for-byte. Browser QA is unverified because the managed preview service is unavailable in the editing environment.
