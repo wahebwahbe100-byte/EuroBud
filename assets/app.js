@@ -2,7 +2,7 @@
   'use strict';
   const menuButton = document.querySelector('.menu-toggle');
   const mobileNav = document.querySelector('.mobile-nav');
-  const desktopMedia = window.matchMedia('(min-width: 761px)');
+  const desktopMedia = window.matchMedia('(min-width: 861px)');
   let menuCloseTimer;
   function setMenu(open, restoreFocus = false) {
     if (!menuButton || !mobileNav) return;
@@ -39,18 +39,58 @@
   });
 
   const filters = [...document.querySelectorAll('[data-filter]')];
+  const mediaItems = [...document.querySelectorAll('.project-videos-row [data-category], .project-grid [data-category]')];
   const projects = [...document.querySelectorAll('[data-gallery]')];
   const filterStatus = document.querySelector('.filter-status');
   filters.forEach((button) => button.addEventListener('click', () => {
     const category = button.dataset.filter;
     filters.forEach((filter) => filter.setAttribute('aria-pressed', String(filter === button)));
-    projects.forEach((project) => {
+    mediaItems.forEach((project) => {
       project.hidden = category !== 'Alle' && project.dataset.category !== category;
       if (!project.hidden) project.classList.add('motion-visible');
     });
-    const count = projects.filter((project) => !project.hidden).length;
-    if (filterStatus) filterStatus.textContent = `${count} ${count === 1 ? 'Bild wird' : 'Bilder werden'} angezeigt.`;
+    const videoGroup = document.querySelector('.project-videos-group');
+    const photoGrid = document.querySelector('.project-grid-full');
+    const photoHeading = document.querySelector('.project-photos-subheading');
+    if (videoGroup) videoGroup.hidden = !videoGroup.querySelector('.project-video-item:not([hidden])');
+    if (photoGrid && photoHeading) photoHeading.hidden = !photoGrid.querySelector('.project-card:not([hidden])');
+    const count = mediaItems.filter((project) => !project.hidden).length;
+    if (filterStatus) filterStatus.textContent = `${count} ${count === 1 ? 'Medium wird' : 'Medien werden'} angezeigt.`;
   }));
+
+
+  // Open project clips in a modal so the poster cards never change size in the gallery.
+  const videoDialog = document.querySelector('.project-video-dialog');
+  const videoPlayer = videoDialog?.querySelector('video');
+  const videoSource = videoPlayer?.querySelector('source');
+  let lastVideoTrigger = null;
+  document.querySelectorAll('[data-project-video]').forEach((trigger) => {
+    trigger.addEventListener('click', () => {
+      if (!videoDialog || !videoPlayer || !videoSource) return;
+      lastVideoTrigger = trigger;
+      videoPlayer.pause();
+      videoSource.src = trigger.dataset.projectVideo;
+      videoPlayer.poster = trigger.dataset.videoPoster;
+      videoPlayer.setAttribute('aria-label', trigger.dataset.videoTitle || 'Projektvideo');
+      videoDialog.querySelector('.project-video-dialog-title').textContent = trigger.dataset.videoTitle || 'Projektvideo';
+      videoPlayer.muted = true;
+      videoPlayer.load();
+      videoDialog.showModal();
+      document.body.classList.add('modal-open');
+      const playAttempt = videoPlayer.play();
+      if (playAttempt?.catch) playAttempt.catch(() => {});
+    });
+  });
+  videoDialog?.querySelector('.project-video-close')?.addEventListener('click', () => videoDialog.close());
+  videoDialog?.addEventListener('click', (event) => { if (event.target === videoDialog) videoDialog.close(); });
+  videoDialog?.addEventListener('close', () => {
+    videoPlayer?.pause();
+    if (videoSource) videoSource.removeAttribute('src');
+    videoPlayer?.removeAttribute('poster');
+    videoPlayer?.load();
+    document.body.classList.remove('modal-open');
+    lastVideoTrigger?.focus({ preventScroll:true });
+  });
 
   const lightbox = document.querySelector('.lightbox');
   let activeProject = null;
@@ -120,7 +160,7 @@
         return;
       }
       message = [
-        'Hallo EuroBud,', '', 'ich möchte ein Projekt mit Ihnen besprechen.', '',
+        'Hallo EuroBau,', '', 'ich möchte ein Projekt mit Ihnen besprechen.', '',
         `Name: ${name}`, `E-Mail: ${email}`,
         service ? `Bereich: ${service}` : '', location ? `Ort: ${location}` : '', '',
         'Mein Vorhaben:', details, '', 'Ich freue mich auf Ihre Rückmeldung.'

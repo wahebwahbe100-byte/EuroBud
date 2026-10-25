@@ -1,5 +1,5 @@
 /* EuroBud: "Das ist EuroBud" -- left overview, right three-step process. */
-.about-section { background:#222626; padding:88px 0 92px; }
+.about-section { background:var(--navy); padding:88px 0 92px; }
 .about-section .about-grid-refined {
   display:grid;
   grid-template-columns:minmax(0, .90fr) minmax(0, 1.10fr);
@@ -7,7 +7,7 @@
   gap:clamp(36px, 6vw, 94px);
 }
 .about-section .about-copy { grid-column:1; grid-row:1; max-width:515px; min-width:0; }
-.about-section .about-copy > .eyebrow { color:#f35159; font-weight:700; letter-spacing:.19em; }
+.about-section .about-copy > .eyebrow { color:var(--brand-light); font-weight:700; letter-spacing:.19em; }
 .about-section .about-copy h2 {
   margin:18px 0 0;
   font-size:clamp(38px, 4vw, 58px);
@@ -17,7 +17,7 @@
 }
 .about-section .about-heading-rule {
   display:block;
-  background:#ed1727;
+  background:var(--brand);
   width:58px; height:3px;
   margin-top:25px;
 }
@@ -25,11 +25,11 @@
   font-size:15px;
   line-height:1.85;
   margin-top:25px;
-  color:#cbd0d0;
+  color:#c7d8e6;
   max-width:455px;
 }
 .about-section .about-copy .check-list { margin:24px 0 31px; }
-.about-section .about-copy .check-list li { color:#f1f2f1; font-size:13px; line-height:1.55; margin:13px 0; }
+.about-section .about-copy .check-list li { color:#f2f7fb; font-size:13px; line-height:1.55; margin:13px 0; }
 .about-section .about-copy .check-list .icon { flex:0 0 20px; width:20px; height:20px; }
 .about-section .about-copy .button-outline {
   border-color:rgba(255,255,255,.52);
@@ -37,7 +37,7 @@
   min-height:50px;
   padding:14px 21px;
 }
-.about-section .about-copy .button-outline:hover { border-color:#ed1727; }
+.about-section .about-copy .button-outline:hover { border-color:var(--brand); color:var(--ink); }
 .about-section .about-process-panel-refined {
   grid-column:2;
   grid-row:1;
@@ -52,7 +52,7 @@
 .about-section .about-process-steps { display:flex; flex-direction:column; gap:20px; }
 .about-section .about-process-eyebrow {
   margin:0 0 9px;
-  color:#ef4754;
+  color:var(--brand-light);
   text-transform:uppercase;
   font-size:10px;
   font-weight:700;
@@ -75,7 +75,7 @@
 .about-section .about-process-panel-refined .about-process-number {
   font-size:21px;
   line-height:1.25;
-  color:#f02a3b;
+  color:var(--brand-light);
 }
 .about-section .about-process-panel-refined .about-process-content h3 {
   font-size:20px;
@@ -88,7 +88,7 @@
   margin:0;
   font-size:13px;
   line-height:1.75;
-  color:#bdc4c8;
+  color:#c7d8e6;
 }
 @media (max-width:900px) {
   .about-section .about-grid-refined { gap:33px; }

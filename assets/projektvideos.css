@@ -1,0 +1,94 @@
+/* EuroBau Projekte: project videos on top, project photos below within one section. */
+.project-videos-group { margin-top: 10px; }
+.project-media-subheading { display:flex; align-items:baseline; justify-content:space-between; gap:16px; margin:0 0 20px; }
+.project-media-subheading h3 { font-family:var(--heading); color:var(--ink); font-size:23px; font-weight:700; line-height:1.2; }
+.project-media-subheading span { color:var(--muted); font-size:12px; }
+.project-photos-subheading { margin-top:52px; padding-top:30px; border-top:1px solid var(--line); }
+.project-videos-row { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; align-items:start; max-width:1120px; }
+.project-video-item { min-width:0; }
+.project-video-thumbnail { display:block; position:relative; padding:0; border:0; overflow:hidden; width:100%; aspect-ratio:16/9; background:#dbe7ef; text-align:left; cursor:pointer; }
+.project-video-thumbnail img { display:block; width:100%; height:100%; object-fit:cover; transition:transform .4s ease; }
+.project-video-thumbnail:hover img { transform:scale(1.025); }
+.project-video-thumbnail:focus-visible { outline:3px solid var(--brand); outline-offset:3px; }
+.project-video-overlay { position:absolute; inset:0; background:linear-gradient(180deg,rgba(5,21,34,.12),rgba(5,21,34,.02) 44%,rgba(5,21,34,.22)); pointer-events:none; }
+.project-video-play { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); display:grid; place-items:center; width:66px; height:66px; border-radius:50%; background:rgba(255,255,255,.97); box-shadow:0 12px 36px rgba(0,0,0,.2); transition:transform .2s ease, background .2s ease; }
+.project-video-play svg { display:block; width:25px; height:25px; fill:var(--ink); margin-left:4px; }
+.project-video-thumbnail:hover .project-video-play { transform:translate(-50%,-50%) scale(1.06); background:#fff; }
+.project-video-badge { position:absolute; right:16px; top:16px; background:#fff; padding:9px 13px; font-size:10px; font-family:var(--body); color:var(--ink); font-weight:700; line-height:1; letter-spacing:.16em; }
+.project-video-text { padding-top:16px; }
+.project-video-text .project-category { font-size:10px; margin-bottom:7px; }
+.project-video-text h3 { color:var(--ink); font-family:var(--heading); font-size:clamp(21px,2.1vw,27px); line-height:1.2; font-weight:600; }
+.project-video-text p { color:var(--muted); font-size:12px; margin-top:6px; }
+.project-video-dialog { width:min(92vw,720px); max-width:92vw; max-height:94dvh; border:0; padding:0; background:transparent; color:#fff; overflow:visible; }
+.project-video-dialog::backdrop { background:rgba(4,15,24,.9); backdrop-filter:blur(5px); }
+.project-video-dialog-inner { position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; width:100%; min-height:0; }
+.project-video-dialog video { display:block; width:100%; max-height:80dvh; aspect-ratio:9/16; object-fit:contain; background:#071a2c; }
+.project-video-close { position:absolute; z-index:3; top:8px; right:8px; width:44px; height:44px; border:0; background:#fff; color:#0d2c45; font-size:32px; line-height:1; display:grid; place-items:center; }
+.project-video-dialog-bottom { display:flex; width:100%; align-items:center; justify-content:space-between; gap:15px; color:#fff; font-size:12px; }
+.project-video-dialog-title { font-family:var(--heading); font-size:19px; line-height:1.2; }
+@media (max-width:760px) {
+  .project-videos-row { grid-template-columns:1fr; gap:26px; }
+  .project-media-subheading { align-items:flex-start; flex-direction:column; gap:6px; margin-bottom:15px; }
+  .project-media-subheading h3 { font-size:22px; }
+  .project-photos-subheading { margin-top:36px; padding-top:24px; }
+  .project-video-play { width:58px; height:58px; }
+  .project-video-play svg { width:22px; height:22px; }
+  .project-video-text h3 { font-size:23px; }
+  .project-video-dialog { width:100%; max-width:100%; max-height:100dvh; }
+  .project-video-dialog video { width:100%; max-height:82dvh; }
+  .project-video-dialog-title { font-size:16px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .project-video-play,.project-video-thumbnail img { transition:none; }
+}
+
+/* Mobile: show both video posters alongside each other, matching the 2-column photo gallery. */
+@media (max-width: 760px) {
+  .project-videos-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: clamp(10px, 3vw, 16px);
+    row-gap: 20px;
+    max-width: 100%;
+    width: 100%;
+    align-items: start;
+  }
+  .project-videos-row > .project-video-item {
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+  }
+  .project-video-thumbnail {
+    width: 100%;
+    aspect-ratio: 1.42;
+  }
+  .project-video-text { padding-top: 11px; min-width: 0; }
+  .project-video-text .project-category {
+    font-size: 8px;
+    letter-spacing: .05em;
+    line-height: 1.45;
+    margin-bottom: 5px;
+    overflow-wrap: anywhere;
+  }
+  .project-video-text h3 {
+    font-size: clamp(15px, 3.9vw, 18px);
+    line-height: 1.23;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+  }
+  .project-video-play { width: 48px; height: 48px; }
+  .project-video-play svg { width: 18px; height: 18px; margin-left: 2px; }
+  .project-video-badge {
+    right: 7px;
+    top: 7px;
+    padding: 6px 8px;
+    font-size: 8px;
+    letter-spacing: .08em;
+  }
+}
+@media (max-width: 360px) {
+  .project-videos-row { column-gap: 10px; }
+  .project-video-text h3 { font-size: 15px; }
+  .project-video-play { width: 42px; height: 42px; }
+  .project-video-play svg { width: 16px; height: 16px; }
+}
